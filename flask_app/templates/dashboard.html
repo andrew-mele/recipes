@@ -17,7 +17,7 @@
             <a href="/create" class="btn btn-info">Create A Recipe</a>
         </div>
 
-        <h1>These are your Recipes!</h1>
+        <h1>These are all the Recipes!</h1>
         <table class="table">
             <thead>
                 <td scope="col" class="table-secondary"><h5>Name</h5></td>
@@ -27,8 +27,8 @@
             <tbody>
               {% for recipe in recipes %}
                 <tr >
-                 <td scope="row" class="table-success"><p>{{ recipes.name }}</p></td>
-                 <td scope="row" class="table-success"><p>{{ recipes.description }}</p></td>
+                 <td scope="row" class="table-success"><p>{{ recipe.name }}</p></td>
+                 <td scope="row" class="table-success"><p>{{ recipe.description }}</p></td>
                  <td scope="row" class="table-success"> <p ><a href="/instructions/{{recipe.id}}" class="btn btn-outline-light">Instructions</a> <a href="/edit/{{recipe.id}}" class="btn btn-outline-secondary">Edit</a><a href="/delete/{{recipe.id}}" class="btn btn-outline-danger">Delete</a></p></td>              
                </tr>
               {% endfor %}

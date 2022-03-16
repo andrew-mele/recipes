@@ -113,4 +113,4 @@ def edit_recipe(id):
     data = {
         "id":id
     }
-    return render_template("edit_recipes.html",edit=Recipe.one_recipe(data))
+    return render_template("edit_recipes.html",edit=Recipe.one_recipe(data), user = User.get_by_id(data))
