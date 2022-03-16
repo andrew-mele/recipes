@@ -17,7 +17,7 @@ class Recipe:
 
     @classmethod
     def get_all_recipes(cls,data):
-        query = 'SELECT * FROM recipes (name, description, instructions) VALUES (%(name)s,%(description)s,%(instructions)s;'
+        query = 'SELECT * FROM recipes;'
         return connectToMySQL(cls.db).query_db(query, data)
 
     @classmethod
