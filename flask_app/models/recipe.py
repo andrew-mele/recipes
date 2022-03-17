@@ -22,13 +22,13 @@ class Recipe:
 
     @classmethod
     def one_recipe(cls,data):
-        query = 'SELECT * FROM recipes WHERE id = %(id)s;)'
+        query = 'SELECT * FROM recipes WHERE id = %(id)s;'
         return connectToMySQL(cls.db).query_db(query, data)
 
     @classmethod
-    def update_recipe(cls,data):
-        query = 'UPDATE recipes SET name = %(name)s, description = %(description)s, instructions = %(instructions)s WHERE id = %(id)s;'
-        return connectToMySQL(cls.db).query_db(query, data)
+    def update_recipe(cls, data):
+        query = "UPDATE recipes SET name=%(name)s, description=%(description)s, instructions=%(instructions)s, updated_at=NOW() WHERE id = %(id)s;"
+        return connectToMySQL(cls.db_name).query_db(query,data)
 
     @classmethod
     def delete_recipe(cls,data):

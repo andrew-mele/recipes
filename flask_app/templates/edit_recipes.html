@@ -17,7 +17,7 @@
         </div>
 
     </nav>
-    <form action="/update/recipe" method="post">
+    <form action="/update/recipe/{{edit.id}}" method="post">
         <h2>Edit Recipe</h2>
         {% with messages = get_flashed_messages(category_filter=['recipe']) %}
             {% if messages %}
@@ -42,7 +42,7 @@
                 </div>
                 <div class="form-group">
                     <label for="instructions">Instructions:</label>
-                    <textarea name="instructions"  cols="30" rows="5" class="form-control">{{edit.instructions}}</textarea>
+                    <textarea name="instructions"  cols="30" rows="5" class="form-control">edit.instructions}}</textarea>
                 </div>
             </div>
             <div>

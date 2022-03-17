@@ -89,7 +89,7 @@ def instructions(id):
     }
     return render_template("instructions.html", user=User.get_by_id(user_data), recipe=Recipe.one_recipe(data))
 
-@app.route('/update/recipe',methods=['POST'])
+@app.route('/update/recipe/',methods=['POST'])
 def update_recipe():
     if 'user_id' not in session:
         return redirect('/logout')
@@ -113,4 +113,7 @@ def edit_recipe(id):
     data = {
         "id":id
     }
-    return render_template("edit_recipes.html",edit=Recipe.one_recipe(data), user = User.get_by_id(data))
+    user_data = {
+        'id':session['user_id']
+    }
+    return render_template("edit_recipes.html",edit=Recipe.one_recipe(data), user = User.get_by_id(user_data))
